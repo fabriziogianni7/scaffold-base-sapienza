@@ -1,0 +1,3 @@
+clone repo and run `yarn`
+
+edit contracts
