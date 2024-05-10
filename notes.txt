@@ -1,3 +1,25 @@
 clone repo and run `yarn`
-
 edit contracts
+
+Rough Description:
+A market of bikes
+
+you should have:
+- function to add bikes
+each bike should have a price, and a seller (who's selling the bike)
+when adding a new bike, the seller should deposit twice the price
+
+- function to buy
+the buyer should deposit twice the price of the bike
+
+- function to confirm order is received:
+the buyer should confirm he received the bike and should get back half the deposit
+the seller should get the price of the bike + what he deposited 
+
+
+
+
+
+
+
+
