@@ -5,7 +5,7 @@ pragma solidity ^0.8.25;
 import "hardhat/console.sol";
 
 // Use openzeppelin to inherit battle-tested implementations (ERC20, ERC721, etc)
-// import "@openzeppelin/contracts/access/Ownable.sol";
+import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @custom:forkedfrom BuidlGuidl
@@ -16,6 +16,7 @@ import "hardhat/console.sol";
  * for buyer: that he receives the bike
  */
 contract BikeMarket {
+    // Errors
     // State Variables
 
     // Events: a way to emit log statements from smart contract that can be listened to by external parties

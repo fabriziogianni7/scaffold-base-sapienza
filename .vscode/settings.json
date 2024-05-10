@@ -1,5 +1,5 @@
 {
-  "solidity.packageDefaultDependenciesContractsDirectory": "",
+  "solidity.packageDefaultDependenciesContractsDirectory": "contracts",
   "solidity.packageDefaultDependenciesDirectory": "node_modules",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true
