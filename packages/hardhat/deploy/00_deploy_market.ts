@@ -22,10 +22,10 @@ const deployBikeMarket: DeployFunction = async function (hre: HardhatRuntimeEnvi
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
 
-  await deploy("BikeMarket", {
+  await deploy("BikeToken", {
     from: deployer,
     // Contract constructor arguments
-    args: ["Porta Portese"],
+    args: [],
     log: true,
     // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
     // automatically mining the contract deployment transaction. There is no effect on live networks.
@@ -33,8 +33,20 @@ const deployBikeMarket: DeployFunction = async function (hre: HardhatRuntimeEnvi
   });
 
   // Get the deployed contract to interact with it after deploying.
+  const token = await hre.ethers.getContract<Contract>("BikeToken", deployer);
+
+  await deploy("BikeMarket", {
+    from: deployer,
+    // Contract constructor arguments
+    args: [await token.getAddress()],
+    log: true,
+    // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
+    // automatically mining the contract deployment transaction. There is no effect on live networks.
+    autoMine: true,
+  });
+
   const market = await hre.ethers.getContract<Contract>("BikeMarket", deployer);
-  console.log("👋 Initial greeting:", await market.greeting());
+  console.log("👋 Initial greeting:", await market.s_bikeCounter());
 };
 
 export default deployBikeMarket;
