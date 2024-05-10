@@ -16,7 +16,8 @@ the buyer should deposit twice the price of the bike
 the buyer should confirm he received the bike and should get back half the deposit
 the seller should get the price of the bike + what he deposited 
 
-
+Bonus points:
+Use ERC20 from openzeppelin to pay instead of native currency
 
 
 
